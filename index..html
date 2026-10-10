@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyBlog — Thoughts, Ideas, Life</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--bg:#f5f8fc;--card:#fff;--text:#1d2b41;--muted:#667b99;--blue:#1976f3;--border:#e5edf6;--footer:#1b2a3e;--shadow:0 5px 20px rgba(28,55,90,.045)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55;transition:background .2s,color .2s}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}.topbar{height:82px;background:var(--card);display:flex;align-items:center;justify-content:space-between;padding:0 5%;gap:24px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:12px;min-width:225px}.brand-icon{font-size:38px;color:var(--blue);transform:rotate(-18deg)}.brand strong{display:block;font-size:27px;line-height:1.1;letter-spacing:-1px}.brand strong span{color:var(--blue)}.brand small{display:block;color:var(--muted);font-size:12px;margin-top:5px}nav{display:flex;gap:34px;height:100%;align-items:center}nav a{height:100%;display:flex;align-items:center;font-weight:600;font-size:14px;border-bottom:3px solid transparent;padding-top:3px}nav a:hover,nav a.active{color:var(--blue);border-color:var(--blue)}.header-actions{display:flex;align-items:center;gap:12px}.searchbox{background:var(--bg);border-radius:30px;padding:8px 13px;display:flex;gap:9px;align-items:center;width:160px}.searchbox span{font-size:24px;line-height:1}.searchbox input{border:0;outline:0;background:transparent;width:100%;min-width:0;color:var(--text);font-size:13px}.theme-toggle,.menu-toggle{border:1px solid var(--border);background:var(--bg);color:var(--text);border-radius:50%;width:40px;height:40px;cursor:pointer;font-size:21px}.menu-toggle{display:none}.hero{min-height:265px;display:flex;align-items:center;padding:38px 7%;background:linear-gradient(90deg,rgba(240,248,255,.97) 0%,rgba(240,248,255,.86) 38%,rgba(240,248,255,.05) 100%),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85') center 48%/cover no-repeat}.hero-content{max-width:600px}.eyebrow{font-size:10px;font-weight:800;letter-spacing:2px;color:var(--blue);margin:0 0 8px}.hero h1{font-size:clamp(30px,4vw,44px);letter-spacing:-1.7px;line-height:1.15;margin:0 0 12px}.hero-content>p:not(.eyebrow){font-size:17px;color:#354962;margin:0 0 22px}.primary-btn{display:inline-flex;align-items:center;gap:16px;background:var(--blue);color:#fff;border:0;border-radius:9px;padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;transition:transform .15s,background .15s}.primary-btn:hover{background:#075fd1;transform:translateY(-1px)}.content-wrap{max-width:1440px;margin:0 auto;padding:28px 4.5% 36px;display:grid;grid-template-columns:minmax(0,2.2fr) minmax(270px,.88fr);gap:22px}.section-heading{display:flex;align-items:end;justify-content:space-between;margin:0 0 12px}.section-heading .eyebrow{margin-bottom:2px}.section-heading h2,.panel h2{font-size:23px;letter-spacing:-.6px;margin:0}.view-all{border:0;background:none;color:var(--blue);font-weight:600;cursor:pointer;padding:7px 0}.posts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.post-card{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:14px;display:grid;grid-template-columns:minmax(105px,.9fr) minmax(0,1.2fr);gap:17px;min-height:220px;box-shadow:var(--shadow);overflow:hidden}.post-image{width:100%;height:100%;min-height:185px;object-fit:cover;border-radius:7px;background:linear-gradient(135deg,#dcecff,#edf3f8)}.post-copy{display:flex;flex-direction:column;align-items:flex-start;min-width:0}.category{display:inline-block;font-size:11px;font-weight:600;color:#1264ce;background:#e4f1ff;padding:3px 10px;border-radius:20px;margin:3px 0 8px}.category.travel{color:#7044c5;background:#f0e8ff}.category.technology{color:#078466;background:#def8ef}.category.lifestyle{color:#d43c56;background:#ffebee}.post-copy h3{font-size:16px;line-height:1.35;margin:0 0 9px;letter-spacing:-.3px}.post-copy p{font-size:13px;color:var(--muted);margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.post-meta{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:11px;margin-top:auto}.post-meta span{white-space:nowrap}.read-more{margin-top:9px;color:var(--blue);border:0;background:none;padding:0;cursor:pointer;font-size:12px;font-weight:700}.sidebar{display:flex;flex-direction:column;gap:13px}.panel{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:18px 20px;box-shadow:var(--shadow)}.panel h2{font-size:19px;margin-bottom:12px}.about-row{display:grid;grid-template-columns:85px 1fr;gap:16px;align-items:center}.avatar{width:85px;height:85px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#1976f3,#b7d8ff);color:white;font-size:34px;font-weight:800}.about-row h3{font-size:14px;margin:0 0 4px}.about-row p,.create-panel p{font-size:13px;color:var(--muted);margin:0}.about-panel blockquote{border-top:1px solid var(--border);margin:15px 0 0;padding-top:11px;color:#477ebd;font-style:italic;font-size:13px}.recent-item{display:grid;grid-template-columns:64px 1fr;gap:11px;align-items:center;margin:10px 0}.recent-item img{width:64px;height:56px;object-fit:cover;border-radius:6px;background:#e8eef5}.recent-item h3{font-size:12px;font-weight:500;line-height:1.35;margin:0 0 4px}.recent-item time{font-size:11px;color:var(--muted)}.create-panel form{display:flex;flex-direction:column;gap:7px;margin-top:14px}.create-panel label{font-size:12px;font-weight:700}.create-panel input,.create-panel select,.create-panel textarea{width:100%;border:1px solid var(--border);border-radius:7px;padding:9px 10px;background:var(--bg);color:var(--text);outline-color:var(--blue);font-size:13px}.create-panel textarea{resize:vertical}.submit-btn{justify-content:center;margin-top:5px}.form-note{display:block;font-size:10px;color:var(--muted);margin-top:9px}.empty-message{padding:25px;text-align:center;color:var(--muted)}footer{background:var(--footer);color:white;padding:22px 5% 12px}.footer-top{display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-brand{font-size:20px;font-weight:800}.footer-top p{font-size:11px;color:#d4deeb;margin:3px 0}.footer-links,.socials{display:flex;gap:22px;font-size:12px}.footer-links a:hover,.socials a:hover{color:#8ec0ff}.socials{font-weight:700;font-size:14px}.copyright{text-align:center;font-size:10px;color:#d4deeb;margin:16px 0 0}.dark{--bg:#101927;--card:#182438;--text:#e8eff9;--muted:#a1b2ca;--border:#2a3a51;--footer:#0b1220;--shadow:0 5px 20px rgba(0,0,0,.1)}.dark .hero{background-image:linear-gradient(90deg,rgba(16,25,39,.96) 0%,rgba(16,25,39,.8) 38%,rgba(16,25,39,.12) 100%),url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85')}.dark .hero-content>p:not(.eyebrow){color:#d4deeb}.dark .category{background:#203d5f;color:#a9d2ff}.dark .category.travel{background:#382d53;color:#d7c4ff}.dark .category.technology{background:#1b443b;color:#9bf0d4}.dark .category.lifestyle{background:#4a2a35;color:#ffc1cf}
+@media(max-width:1050px){.topbar{padding:0 3%;gap:12px}.brand{min-width:auto}.brand strong{font-size:23px}nav{gap:18px}.content-wrap{grid-template-columns:minmax(0,1fr) 285px;padding-left:3%;padding-right:3%}.post-card{grid-template-columns:1fr;gap:10px}.post-image{height:150px;min-height:150px}.post-copy p{-webkit-line-clamp:2}}
+@media(max-width:760px){.topbar{height:auto;min-height:72px;flex-wrap:wrap;padding:12px 5%}.brand-icon{font-size:30px}.brand strong{font-size:22px}.brand small{font-size:10px}.menu-toggle{display:block;margin-left:auto}.header-actions{order:3;width:100%;justify-content:space-between}.searchbox{flex:1}.topbar nav{display:none;order:4;width:100%;height:auto;flex-direction:column;align-items:stretch;gap:0}.topbar nav.open{display:flex}.topbar nav a{padding:10px 0;border-bottom:1px solid var(--border)}.hero{min-height:270px;padding:34px 6%;background-position:center}.hero-content>p:not(.eyebrow){font-size:15px}.desktop-break{display:none}.content-wrap{display:flex;flex-direction:column;padding:24px 5%;gap:22px}.posts-grid{grid-template-columns:1fr}.post-card{grid-template-columns:120px minmax(0,1fr);min-height:175px}.post-image{height:100%;min-height:145px}.post-copy h3{font-size:15px}.post-copy p{-webkit-line-clamp:3}.sidebar{display:grid;grid-template-columns:1fr}.footer-top{flex-wrap:wrap}.footer-links{order:3;width:100%;justify-content:center;gap:18px}.socials{margin-left:auto}}
+@media(max-width:390px){.post-card{grid-template-columns:1fr}.post-image{height:170px}.post-meta{gap:7px}.about-row{grid-template-columns:70px 1fr}.avatar{width:70px;height:70px}}
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="MyBlog home">
+      <span class="brand-icon">✒</span>
+      <span><strong>My<span>Blog</span></strong><small>Thoughts · Ideas · Life</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    <nav id="navLinks">
+      <a class="active" href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#posts">Categories</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <label class="searchbox" aria-label="Search posts"><span>⌕</span><input id="searchInput" type="search" placeholder="Search blogs..."></label>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">A LITTLE SPACE FOR BIG IDEAS</p>
+        <h1>Welcome to MyBlog</h1>
+        <p>A place where I share my thoughts, ideas, experiences<br class="desktop-break"> and everything that inspires me.</p>
+        <a class="primary-btn" href="#posts">Explore Blogs <span>→</span></a>
+      </div>
+    </section>
+
+    <section class="content-wrap" id="posts">
+      <div class="posts-area">
+        <div class="section-heading">
+          <div><p class="eyebrow">FRESHLY WRITTEN</p><h2>Latest Posts</h2></div>
+          <button id="showAll" class="view-all">View All →</button>
+        </div>
+        <div class="posts-grid" id="postsGrid"></div>
+        <p id="emptyMessage" class="empty-message" hidden>No blog posts found. Try another search or add a post.</p>
+      </div>
+
+      <aside class="sidebar">
+        <section class="panel about-panel" id="about">
+          <h2>About Me</h2>
+          <div class="about-row">
+            <div class="avatar">V</div>
+            <div><h3>Hi, I'm Vishva</h3><p>A student, learner and a curious mind. I love writing about technology, lifestyle, travel and personal growth.</p></div>
+          </div>
+          <blockquote>“Good thoughts make a better tomorrow.”</blockquote>
+        </section>
+        <section class="panel recent-panel">
+          <h2>Recent Posts</h2>
+          <div id="recentPosts"></div>
+        </section>
+        <section class="panel create-panel">
+          <h2>Write a Blog</h2>
+          <p>Have an idea to share? Create a post and it will appear on this page.</p>
+          <form id="blogForm">
+            <label for="postTitle">Blog title</label>
+            <input id="postTitle" required maxlength="90" placeholder="Enter a title">
+            <label for="postCategory">Category</label>
+            <select id="postCategory">
+              <option>Productivity</option><option>Travel</option><option>Technology</option><option>Lifestyle</option><option>Personal Growth</option>
+            </select>
+            <label for="postImage">Image URL (optional)</label>
+            <input id="postImage" type="url" placeholder="https://example.com/image.jpg">
+            <label for="postText">Your blog</label>
+            <textarea id="postText" required rows="4" maxlength="1200" placeholder="Write something interesting..."></textarea>
+            <button class="primary-btn submit-btn" type="submit">Publish Blog →</button>
+          </form>
+          <small class="form-note">Posts are saved in this browser on this device.</small>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-top"><div><a class="footer-brand" href="#home">MyBlog</a><p>Thoughts · Ideas · Life</p></div>
+      <div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#posts">Categories</a><a href="mailto:hello@example.com">Contact</a></div>
+      <div class="socials"><a href="#contact" aria-label="Facebook">f</a><a href="#contact" aria-label="Instagram">◎</a><a href="#contact" aria-label="Twitter">♥</a><a href="#contact" aria-label="LinkedIn">in</a></div>
+    </div>
+    <p class="copyright">© <span id="year"></span> MyBlog. All rights reserved.</p>
+  </footer>
+  <script>
+const defaultPosts = [
+  {id:1,title:"5 Simple Habits to Be More Productive",category:"Productivity",date:"Oct 9, 2026",comments:2,image:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=700&q=80",text:"Small changes in your daily routine can make a big difference. Here are 5 simple habits that can help you focus, plan your day, and make steady progress toward your goals."},
+  {id:2,title:"Exploring the Beauty of Hill Stations",category:"Travel",date:"Oct 5, 2026",comments:4,image:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80",text:"Hill stations are not just about cool weather, they are about peace, adventure and new experiences. Take a break, enjoy the views, and discover the beauty of nature."},
+  {id:3,title:"The Future of Technology in Our Daily Life",category:"Technology",date:"Sep 28, 2026",comments:3,image:"https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80",text:"Technology is changing the way we live, work and communicate. Let's explore how it is shaping our future and making everyday tasks easier."},
+  {id:4,title:"How to Build a Better Morning Routine",category:"Lifestyle",date:"Sep 22, 2026",comments:5,image:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80",text:"A good morning routine can boost your energy, focus and mood. Here's how you can build one step by step and make your mornings calmer."}
+];
+let posts;
+try { posts = JSON.parse(localStorage.getItem("myblog-posts")) || defaultPosts; } catch { posts = defaultPosts; }
+const grid = document.getElementById("postsGrid");
+const recent = document.getElementById("recentPosts");
+const searchInput = document.getElementById("searchInput");
+const emptyMessage = document.getElementById("emptyMessage");
+const escapeHtml = value => String(value).replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+const categoryClass = category => category.toLowerCase().replace(/[^a-z]/g,"");
+function renderPosts(filter="") {
+  const filtered = posts.filter(p => `${p.title} ${p.category} ${p.text}`.toLowerCase().includes(filter.toLowerCase()));
+  grid.innerHTML = filtered.map(p => `
+    <article class="post-card">
+      <img class="post-image" src="${escapeHtml(p.image || "https://images.unsplash.com/photo-1455390582262-044c?auto=format&fit=crop&w=700&q=80")}" alt="" onerror="this.style.display='none'">
+      <div class="post-copy">
+        <span class="category ${categoryClass(p.category)}">${escapeHtml(p.category)}</span>
+        <h3>${escapeHtml(p.title)}</h3>
+        <p>${escapeHtml(p.text)}</p>
+        <div class="post-meta"><span>▢ ${escapeHtml(p.date)}</span><span>☏ ${p.comments || 0} comments</span></div>
+        <button class="read-more" data-id="${p.id}">Read more →</button>
+      </div>
+    </article>`).join("");
+  emptyMessage.hidden = filtered.length !== 0;
+  recent.innerHTML = posts.slice(0,4).map(p => `<div class="recent-item"><img src="${escapeHtml(p.image || "")}" alt="" onerror="this.style.display='none'"><div><h3>${escapeHtml(p.title)}</h3><time>${escapeHtml(p.date)}</time></div></div>`).join("");
+}
+function savePosts(){localStorage.setItem("myblog-posts",JSON.stringify(posts));}
+document.getElementById("blogForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const title = document.getElementById("postTitle").value.trim();
+  const category = document.getElementById("postCategory").value;
+  const image = document.getElementById("postImage").value.trim() || "https://images.unsplash.com/photo-1455390582262-044c?auto=format&fit=crop&w=700&q=80";
+  const text = document.getElementById("postText").value.trim();
+  if(!title || !text) return;
+  posts.unshift({id:Date.now(),title,category,image,text,date:new Date().toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"}),comments:0});
+  savePosts(); renderPosts(searchInput.value); e.target.reset();
+  document.getElementById("posts").scrollIntoView({behavior:"smooth"});
+});
+searchInput.addEventListener("input",()=>renderPosts(searchInput.value));
+document.getElementById("showAll").addEventListener("click",()=>{searchInput.value="";renderPosts();document.getElementById("posts").scrollIntoView({behavior:"smooth"});});
+grid.addEventListener("click",e=>{const btn=e.target.closest(".read-more");if(!btn)return;const p=posts.find(x=>String(x.id)===btn.dataset.id);if(p)alert(`${p.title}\n\n${p.text}`);});
+document.getElementById("themeToggle").addEventListener("click",()=>{document.body.classList.toggle("dark");document.getElementById("themeToggle").textContent=document.body.classList.contains("dark")?"☀":"☾";localStorage.setItem("myblog-dark",document.body.classList.contains("dark")?"1":"0");});
+if(localStorage.getItem("myblog-dark")==="1"){document.body.classList.add("dark");document.getElementById("themeToggle").textContent="☀";}
+document.getElementById("menuToggle").addEventListener("click",()=>document.getElementById("navLinks").classList.toggle("open"));
+document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>document.getElementById("navLinks").classList.remove("open")));
+document.getElementById("year").textContent=new Date().getFullYear();
+renderPosts();
+
+  </script>
+</body>
+</html>
